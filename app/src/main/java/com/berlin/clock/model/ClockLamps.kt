@@ -1,11 +1,11 @@
 package com.berlin.clock.model
 
 data class ClockLamps(
-    val secondsLamp: LampColor,
-    val fiveHoursLamps: Array<LampColor>,
-    val oneHourLamps: Array<LampColor>,
-    val fiveMinutesLamps: Array<LampColor>,
-    val oneMinutesLamps: Array<LampColor>,
+    val secondsLamp: LampColor = LampColor.WHITE,
+    val fiveHoursLamps: Array<LampColor> = Array(4){ _-> LampColor.WHITE},
+    val oneHourLamps: Array<LampColor> = Array(4){ _-> LampColor.WHITE},
+    val fiveMinutesLamps: Array<LampColor> = Array(4){ _-> LampColor.WHITE},
+    val oneMinutesLamps: Array<LampColor> = Array(4){ _-> LampColor.WHITE},
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
