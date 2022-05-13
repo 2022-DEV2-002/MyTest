@@ -5,6 +5,10 @@ import com.berlin.clock.model.LampColor
 import org.junit.Test
 import org.junit.Assert.*
 
+/**
+ * Test all lamps
+ *
+ */
 class BerlinClockControllerUnitTest{
     @Test
     fun `test all white lamps only seconds is illuminated`() {
