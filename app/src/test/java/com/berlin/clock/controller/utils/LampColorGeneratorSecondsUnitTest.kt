@@ -10,14 +10,20 @@ import org.junit.Assert.*
  */
 class LampColorGeneratorSecondsUnitTest {
     @Test
-    fun `test seconds white lamp`() {
+    fun `test seconds red lamp`() {
         val secondsResult = LampColorGenerator.generateSecondsLamp(0)
         assertEquals(LampColor.RED, secondsResult)
     }
 
     @Test
-    fun `test seconds red lamp`() {
+    fun `test seconds white lamp`() {
         val secondsResult = LampColorGenerator.generateSecondsLamp(1)
+        assertEquals(LampColor.WHITE, secondsResult)
+    }
+
+    @Test
+    fun `test 59 seconds`() {
+        val secondsResult = LampColorGenerator.generateSecondsLamp(59)
         assertEquals(LampColor.WHITE, secondsResult)
     }
 }
