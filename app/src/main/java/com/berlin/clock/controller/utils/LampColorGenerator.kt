@@ -24,4 +24,14 @@ object LampColorGenerator {
         }
         return oneMinuteLamps
     }
+
+    fun generateFiveHoursLamps(hours: Int): Array<LampColor> {
+        var fiveHoursLamps:Array<LampColor> = Array(4){ _-> LampColor.WHITE}
+        return fiveHoursLamps
+    }
+
+    fun generateOneHourLamps(hours: Int): Array<LampColor> {
+        var oneHourLamps:Array<LampColor> = Array(4){ _-> LampColor.WHITE}
+        return oneHourLamps
+    }
 }
