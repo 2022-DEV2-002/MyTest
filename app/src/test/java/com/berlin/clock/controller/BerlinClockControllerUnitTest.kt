@@ -9,9 +9,16 @@ import org.junit.Assert.*
 
 class BerlinClockControllerUnitTest{
     @Test
-    fun `test all white lamps`() {
-        val clockResult = BerlinClockController(0,0,0)
+    fun `test all white lamps only seconds is illuminated`() {
+        val clockResult = BerlinClockController(0,0,0).getBerlinClockLamps()
         val clockExpected = ClockLamps()
+        assertEquals(clockExpected, clockResult)
+    }
+
+    @Test
+    fun `test all lamps are white`() {
+        val clockResult = BerlinClockController(0,0,1).getBerlinClockLamps()
+        val clockExpected = ClockLamps(secondsLamp = LampColor.WHITE)
         assertEquals(clockExpected, clockResult)
     }
 }

@@ -4,6 +4,6 @@ import com.berlin.clock.model.LampColor
 
 object LampColorGenerator {
     fun generateSecondsLamp(seconds: Int): LampColor {
-        return LampColor.WHITE
+        return if (seconds % 2 == 0) LampColor.RED else LampColor.WHITE
     }
 }

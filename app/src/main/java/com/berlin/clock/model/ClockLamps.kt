@@ -1,7 +1,7 @@
 package com.berlin.clock.model
 
 data class ClockLamps(
-    val secondsLamp: LampColor = LampColor.WHITE,
+    val secondsLamp: LampColor = LampColor.RED,
     val fiveHoursLamps: Array<LampColor> = Array(4){ _-> LampColor.WHITE},
     val oneHourLamps: Array<LampColor> = Array(4){ _-> LampColor.WHITE},
     val fiveMinutesLamps: Array<LampColor> = Array(4){ _-> LampColor.WHITE},

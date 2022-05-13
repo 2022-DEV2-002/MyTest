@@ -12,12 +12,12 @@ class LampColorGeneratorSecondsUnitTest {
     @Test
     fun `test seconds white lamp`() {
         val secondsResult = LampColorGenerator.generateSecondsLamp(0)
-        assertEquals(LampColor.WHITE, secondsResult)
+        assertEquals(LampColor.RED, secondsResult)
     }
 
     @Test
     fun `test seconds red lamp`() {
         val secondsResult = LampColorGenerator.generateSecondsLamp(1)
-        assertEquals(LampColor.RED, secondsResult)
+        assertEquals(LampColor.WHITE, secondsResult)
     }
 }
