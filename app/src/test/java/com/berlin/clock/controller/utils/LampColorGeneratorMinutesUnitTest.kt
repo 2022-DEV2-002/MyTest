@@ -39,7 +39,7 @@ class LampColorGeneratorMinutesUnitTest {
 
     @Test
     fun `test 11 minutes`() {
-        val minuet = 1
+        val minuet = 11
         val fiveMinutesLampsResult = LampColorGenerator.generateFiveMinutesLamps(minuet)
         val oneMinuteLampsResult = LampColorGenerator.generateOneMinuteLamps(minuet)
 
@@ -56,14 +56,14 @@ class LampColorGeneratorMinutesUnitTest {
 
     @Test
     fun `test 20 minutes`() {
-        val minuet = 1
+        val minuet = 20
         val fiveMinutesLampsResult = LampColorGenerator.generateFiveMinutesLamps(minuet)
         val oneMinuteLampsResult = LampColorGenerator.generateOneMinuteLamps(minuet)
 
         val fiveMinutesLampsExpected = Array(11) { _ -> LampColor.WHITE }
         fiveMinutesLampsExpected[0] = LampColor.YELLOW
         fiveMinutesLampsExpected[1] = LampColor.YELLOW
-        fiveMinutesLampsExpected[2] = LampColor.YELLOW
+        fiveMinutesLampsExpected[2] = LampColor.RED
         fiveMinutesLampsExpected[3] = LampColor.YELLOW
 
         val oneMinuteLampsExpected = Array(4) { _ -> LampColor.WHITE }
@@ -74,13 +74,16 @@ class LampColorGeneratorMinutesUnitTest {
 
     @Test
     fun `test 39 minutes`() {
-        val minuet = 1
+        val minuet = 39
         val fiveMinutesLampsResult = LampColorGenerator.generateFiveMinutesLamps(minuet)
         val oneMinuteLampsResult = LampColorGenerator.generateOneMinuteLamps(minuet)
 
         val fiveMinutesLampsExpected = Array(11) { _ -> LampColor.WHITE }
         for (i:Int in 0..6)
         fiveMinutesLampsExpected[i] = LampColor.YELLOW
+
+        fiveMinutesLampsExpected[2] = LampColor.RED
+        fiveMinutesLampsExpected[5] = LampColor.RED
 
         val oneMinuteLampsExpected = Array(4) { _ -> LampColor.YELLOW }
 
@@ -90,13 +93,18 @@ class LampColorGeneratorMinutesUnitTest {
 
     @Test
     fun `test 53 minutes`() {
-        val minuet = 1
+        val minuet = 53
         val fiveMinutesLampsResult = LampColorGenerator.generateFiveMinutesLamps(minuet)
         val oneMinuteLampsResult = LampColorGenerator.generateOneMinuteLamps(minuet)
 
         val fiveMinutesLampsExpected = Array(11) { _ -> LampColor.WHITE }
         for (i:Int in 0..9)
             fiveMinutesLampsExpected[i] = LampColor.YELLOW
+
+        fiveMinutesLampsExpected[2] = LampColor.RED
+        fiveMinutesLampsExpected[5] = LampColor.RED
+        fiveMinutesLampsExpected[7] = LampColor.RED
+        fiveMinutesLampsExpected[9] = LampColor.RED
 
         val oneMinuteLampsExpected = Array(4) { _ -> LampColor.YELLOW }
         oneMinuteLampsExpected[3] = LampColor.WHITE
