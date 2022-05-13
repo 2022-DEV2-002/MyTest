@@ -27,11 +27,17 @@ object LampColorGenerator {
 
     fun generateFiveHoursLamps(hours: Int): Array<LampColor> {
         var fiveHoursLamps:Array<LampColor> = Array(4){ _-> LampColor.WHITE}
+        for (i: Int in 1..(hours / 5)) {
+            fiveHoursLamps[i-1] = LampColor.RED
+        }
         return fiveHoursLamps
     }
 
     fun generateOneHourLamps(hours: Int): Array<LampColor> {
         var oneHourLamps:Array<LampColor> = Array(4){ _-> LampColor.WHITE}
+        for (i: Int in 1..(hours % 5)) {
+            oneHourLamps[i-1] = LampColor.RED
+        }
         return oneHourLamps
     }
 }
