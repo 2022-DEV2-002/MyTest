@@ -7,12 +7,21 @@ object LampColorGenerator {
         return if (seconds % 2 == 0) LampColor.RED else LampColor.WHITE
     }
     fun generateFiveMinutesLamps(minutes: Int): Array<LampColor> {
-        var fiveMinutesLamps:Array<LampColor> = Array(11){ _-> LampColor.WHITE}
+        var fiveMinutesLamps: Array<LampColor> = Array(11) { _ -> LampColor.WHITE }
+        for (i: Int in 1..(minutes / 5)) {
+            if (i % 3 == 0 && (i-1) != 0)
+                fiveMinutesLamps[i-1] = LampColor.RED
+            else
+                fiveMinutesLamps[i-1] = LampColor.YELLOW
+        }
         return fiveMinutesLamps
     }
 
     fun generateOneMinuteLamps(minutes: Int): Array<LampColor> {
         var oneMinuteLamps:Array<LampColor> = Array(4){ _-> LampColor.WHITE}
+        for (i: Int in 1..(minutes % 5)) {
+            oneMinuteLamps[i-1] = LampColor.YELLOW
+        }
         return oneMinuteLamps
     }
 }

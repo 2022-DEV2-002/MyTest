@@ -11,6 +11,13 @@ class BerlinClockController(
 ) {
 
     fun getBerlinClockLamps(): ClockLamps {
-        return ClockLamps(secondsLamp = LampColorGenerator.generateSecondsLamp(seconds))
+        val secondsLamp = LampColorGenerator.generateSecondsLamp(seconds)
+        val fiveMinutesLamps = LampColorGenerator.generateFiveMinutesLamps(minutes)
+        val oneMinutesLamps = LampColorGenerator.generateOneMinuteLamps(minutes)
+        return ClockLamps(
+            secondsLamp = secondsLamp,
+            fiveMinutesLamps = fiveMinutesLamps,
+            oneMinutesLamps = oneMinutesLamps
+        )
     }
 }

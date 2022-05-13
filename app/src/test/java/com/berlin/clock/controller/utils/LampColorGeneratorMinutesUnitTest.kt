@@ -103,8 +103,7 @@ class LampColorGeneratorMinutesUnitTest {
 
         fiveMinutesLampsExpected[2] = LampColor.RED
         fiveMinutesLampsExpected[5] = LampColor.RED
-        fiveMinutesLampsExpected[7] = LampColor.RED
-        fiveMinutesLampsExpected[9] = LampColor.RED
+        fiveMinutesLampsExpected[8] = LampColor.RED
 
         val oneMinuteLampsExpected = Array(4) { _ -> LampColor.YELLOW }
         oneMinuteLampsExpected[3] = LampColor.WHITE
