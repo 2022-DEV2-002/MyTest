@@ -12,10 +12,28 @@ object BerlinClockViewer {
         viewSecondsLamp(clockLamps.secondsLamp, context, parentView)
         viewOneMinuteLamps(clockLamps.oneMinutesLamps, context, parentView)
         viewFiveMinutesLamps(clockLamps.fiveMinutesLamps, context, parentView)
+        viewOneHourLamps(clockLamps.oneHourLamps, context, parentView)
+        viewFiveHoursLamps(clockLamps.fiveHoursLamps, context, parentView)
     }
 
-    private fun viewFiveHoursLamps() {}
-    private fun viewOneHourLamps() {}
+    private fun viewFiveHoursLamps(
+        fiveHoursLamps: Array<LampColor>,
+        context: Context,
+        parentView: View
+    ) {
+        val fiveMinutesLampTemplateID = "vi_five_hours_lamp_"
+        illuminateLamps(fiveMinutesLampTemplateID, fiveHoursLamps, context, parentView)
+    }
+
+    private fun viewOneHourLamps(
+        onHoursLamps: Array<LampColor>,
+        context: Context,
+        parentView: View
+    ) {
+        val fiveMinutesLampTemplateID = "vi_one_hour_lamp_"
+        illuminateLamps(fiveMinutesLampTemplateID, onHoursLamps, context, parentView)
+    }
+
     private fun viewFiveMinutesLamps(
         fiveMinutesLamps: Array<LampColor>,
         context: Context,
@@ -48,7 +66,7 @@ object BerlinClockViewer {
         context: Context,
         parentView: View
     ) {
-        val lastIndex = lamps.size-1
+        val lastIndex = lamps.size - 1
         for (index: Int in 0..lastIndex) {
             val lamp = getLamp(fiveMinutesLampTemplateID + index, context, parentView)
             when (lamps[index]) {
@@ -64,7 +82,7 @@ object BerlinClockViewer {
                     when (index) {
                         0 -> lamp.background = context.getDrawable(R.drawable.left_rectangle_yellow)
                         lastIndex -> lamp.background =
-                            context.getDrawable(R.drawable.right_rectangle_yello)
+                            context.getDrawable(R.drawable.right_rectangle_yellow)
                         else -> lamp.background = context.getDrawable(R.drawable.rectangle_yellow)
                     }
                 }
